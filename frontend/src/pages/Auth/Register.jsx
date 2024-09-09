@@ -180,8 +180,12 @@ const Register = () => {
     }
   
     try {
-      const response = await register({ username, email, password, location }).unwrap();
-      await dispatch(setCredentials({ ...response }));
+      // Send only required user data to the API
+      const response = await register({ username, email, password }).unwrap();
+      
+      // Dispatch both userInfo and location to Redux
+      dispatch(setCredentials({ userInfo: response, location }));
+      
       navigate(redirect);
       toast.success("Account Created Successfully!");
     } catch (error) {
@@ -192,6 +196,7 @@ const Register = () => {
       toast.error(errorMessage);
     }
   };
+  
   
 
   return (

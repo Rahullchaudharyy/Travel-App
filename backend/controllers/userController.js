@@ -4,7 +4,7 @@ import asyncHandler from "../middlewares/asyncHandler.js";
 import createToken from "../utils/createToken.js";
 
 const createUser = asyncHandler(async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password,location } = req.body;
 
   if (!username || !email || !password) {
     throw new Error("Please fill all the fields");
@@ -26,7 +26,8 @@ const createUser = asyncHandler(async (req, res) => {
       _id: newUser._id,
       username: newUser.username,
       email: newUser.email,
-      isAdmin: newUser.isAdmin,
+      location: newUser.location, // Include location in response
+
     });
   } catch (error) {
     res.status(400);

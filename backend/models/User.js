@@ -17,18 +17,17 @@ const userSchema = mongoose.Schema(
       required: true,
     },
     location: {
+      // Make sure location is an object with latitude and longitude
       type: {
-        type: String,
-        enum: ['Point'],
-        required: true,
+        latitude: { type: Number, required: true },
+        longitude: { type: Number, required: true },
       },
-      coordinates: {
-        type: [Number],
-        required: true,
-      },
+      required: false, // Make it optional if you want to allow registrations without location
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 
