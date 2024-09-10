@@ -1,4 +1,3 @@
-import React from 'react'
 import UpcomingEvents from '../components/UppcomingEvents'
 
 const Home = () => {
@@ -10,7 +9,7 @@ const Home = () => {
       <div>
         <h1 className="text-5xl font-bold mb-4">Discover the Best of Our City</h1>
         <p className="text-lg mb-6">Explore top attractions, dining, and more.</p>
-        <input type="text" placeholder="Search for attractions or dining" className="p-3 rounded w-full max-w-md mb-4" />
+        <input type="text" placeholder="Search for attractions or dining" className="p-3 rounded w-full text-black max-w-md mb-4" />
         <button className="bg-yellow-500 text-black p-3 rounded hover:bg-yellow-600">Explore Now</button>
       </div>
     </div>
